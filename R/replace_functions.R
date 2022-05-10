@@ -82,3 +82,13 @@ replace_donut_plot <- function(pres, label, percent_favorable) {
                                     series_values=list(c(percent_favorable, 1-percent_favorable)))
 }
 
+#' Get the unique slide ID for a slide using the slide number
+#'
+#' @param pres  Python pptx Presentation object.
+#' @param slide_num (int) The slide number of the target slide.
+#'
+#' @return
+#' @export
+get_slide_id <- function(pres, slide_num) {
+  rpptx_py$get_slide_id(pres, slide_num)
+}
