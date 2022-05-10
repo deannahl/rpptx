@@ -1,6 +1,15 @@
 from pptx.chart.data import CategoryChartData
 from pptx.util import Inches
 
+def get_slide_id(pres, slide_num):
+  """Get the slide ID for a particular slide in a presentation.
+  
+  Keyword Arguments:
+    pres -- pptx Pres object containing the target shape
+    slide_num -- Slide number
+  """
+  return pres.slides[slide_num - 1].slide_id
+
 
 def get_shape_with_label(pres, label, slide_num=None):
     """Select the shape with a particular label from a presentation object.
