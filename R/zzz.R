@@ -10,6 +10,7 @@ pptx <- NULL
   # Load python code
   rpptx_py <<- reticulate::import_from_path(
     "rpptx_py",
-    path = system.file("python", package = packageName())
+    path = system.file("python", package = packageName()),
+    delay_load = TRUE
   )
 }
