@@ -1,0 +1,117 @@
+---
+title: "Quick Start"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{quick-start}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = FALSE
+)
+```
+
+```{r setup, eval = TRUE}
+library(rpptx)
+library(ggplot2)
+```
+
+The `pptxr` package wraps some functions from the Python `pptx` package that allow a user to replace particular images or text within a PowerPoint presentation file. Shapes (i.e., images or text boxes) are referred to by label. Labels need to be created within the PowerPoint template file. You can edit a shape's label by clicking on the shape and then clicking "Select > Selection Pane..." in the "Editing" section of the "Home" menu. When you open the Selection Pane, the label of the shape you have selected will be highlighted. Click on the label to edit it and give it a descriptive label.
+
+To demonstrate, I've create a minimal example PowerPoint file with an image and a few text boxes that you can download [here](https://genmills-my.sharepoint.com/:p:/p/justin_kracht/EQwjyvWy28hAppf_vjOb_aIBrSCa1lifajVTbCWitkEvsQ?e=EDhtpn). We can read in the example file using the `presentation()` function (you'll need to edit the path to match where you've save the PowerPoint file).
+
+```{r import-presentation}
+pres <- presentation(path = '../../misc/example.pptx')
+```
+
+To begin, let's replace the title and subtitle on the first slide.
+
+```{r replace-title}
+# Replace title on the first slide
+replace_text(
+  pres = pres,                             # Presentation object we loaded earlier
+  label = "title-01",                      # Label of the text box we want to edit
+  new_text = "Example Presentation Title"  # New text to insert into the text box
+)
+
+# Replace subtitle on the first slide
+replace_text(
+  pres = pres,
+  slide_num = 1,
+  label = "subtitle-01",
+  new_text = "Hey, that worked!"
+)
+```
+
+Next, let's save the modified presentation so that we can check out our change.
+
+```{r}
+save_pres(pres, path = "../../misc/example_edit.pptx")
+```
+
+Make sure to close it when you're finished! Trying to read or write a file that's open will generate an error. Next, let's make an image to replace the image currently on the second slide. By default, `replace_image()` makes the replacement image exactly the same size as the image it's replacing. If the replacement image isn't actually that size, it'll be distorted. To avoid that, we'll make sure to specify that the plot we're going to make is exactly the same size as the image it's replacing (4.76in x 7.14in, in this case).
+
+```{r create-new-image, eval = TRUE, fig.width=7.14, fig.height=4.76}
+ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) +
+  geom_point(size = 3) +
+  theme_minimal() +
+  labs(x = "Sepal Width (cm)",
+       y = "Sepal Length (cm)",
+       color = "Species") +
+  theme(legend.position = "bottom")
+```
+
+```{r save-new-image}
+ggsave(filename = "../../misc/new_image.png",
+       plot = last_plot(),
+       dpi = 300,
+       height = 4.76,
+       width = 7.14,
+       units = "in")
+```
+
+Now, we can make some edits on the second slide:
+
+```{r edit-second-slide}
+# Replace image with the new plot we generated
+replace_image(
+  pres = pres,
+  slide_num = 2,
+  label = "img-01",
+  new_image = "../../misc/new_image.png"
+)
+
+# Replace title of the second slide
+replace_text(
+  pres = pres,
+  slide_num = 2,
+  label = "title-02",
+  new_text = "Look, the Formatting is the Same!"
+)
+
+# Replace text in the text boxes
+replace_text(
+  pres = pres,
+  slide_num = 2,
+  label = "txt-01",
+  new_text = "Nightfall,\nToo dark to read the page\nToo cold."
+)
+
+replace_text(
+  pres = pres,
+  slide_num = 2,
+  label = "txt-02",
+  new_text = "--Jack Kerouac"
+)
+```
+
+Let's save the presentation again and check out our work.
+
+```{r}
+# Save the presentation again
+save_pres(pres, path = "../../misc/example_edit.pptx")
+```

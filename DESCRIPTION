@@ -1,0 +1,28 @@
+Package: rpptx
+Type: Package
+Title: Edit PowerPoint Documents In R
+Version: 0.1.0.9001
+Author: Justin Kracht
+Maintainer: Justin Kracht <justin.kracht@genmills.com>
+Description: Edit a PowerPoint template document by replacing images and text with new images and
+    text, preserving size (images) or formatting (text). This is useful for creating many versions
+    of a template presentation. E.g., for creating personalized decks of engagement survey
+    results for each member of the Senior Leadership Team.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Imports: 
+    reticulate
+Config/reticulate:
+    list(
+      packages = list(
+        list(package = "pptx")
+      )
+    )
+Suggests: 
+    rmarkdown,
+    knitr,
+    ggplot2
+VignetteBuilder: knitr
