@@ -90,5 +90,5 @@ replace_donut_plot <- function(pres, label, percent_favorable) {
 #' @return
 #' @export
 get_slide_id <- function(pres, slide_num) {
-  rpptx_py$get_slide_id(pres, slide_num)
+  rpptx_py$get_slide_id(pres, as.integer(slide_num))
 }
