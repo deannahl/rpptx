@@ -11,9 +11,6 @@ get_slide_id(pres, slide_num)
 
 \item{slide_num}{(int) The slide number of the target slide.}
 }
-\value{
-
-}
 \description{
 Get the unique slide ID for a slide using the slide number
 }

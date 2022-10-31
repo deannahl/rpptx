@@ -13,9 +13,6 @@ replace_donut_plot(pres, label, percent_favorable)
 
 \item{percent_favorable}{(double) Proportion of favorable responses.}
 }
-\value{
-
-}
 \description{
 Replace a donut plot
 }

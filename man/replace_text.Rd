@@ -13,9 +13,6 @@ replace_text(pres, label, new_text)
 
 \item{new_text}{(character) New text to replace the old text.}
 }
-\value{
-
-}
 \description{
 Replace text in a PowerPoint text box while retaining formatting.
 }

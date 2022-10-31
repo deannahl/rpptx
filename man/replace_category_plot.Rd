@@ -13,9 +13,6 @@ replace_category_plot(pres, label, data)
 
 \item{data}{(data frame) Data frame used to replace the old table.}
 }
-\value{
-
-}
 \description{
 Replace category plot
 }

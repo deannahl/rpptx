@@ -16,9 +16,6 @@ replace_table(pres, label, new_table, col_names = TRUE)
 \item{col_names}{(boolean) Keep new_table column names as the first row of the
 new table?}
 }
-\value{
-
-}
 \description{
 Replace text in a PowerPoint table while retaining formatting.
 }
