@@ -115,9 +115,10 @@ def py_replace_image(pres, label, new_image, new_height=True):
     shape_width = Inches(old_image.width.inches)
 
     if new_height:
-        shape_height = Inches(old_image.height.inches)
-    else:
         shape_height = None
+    else:
+        shape_height = Inches(old_image.height.inches)
+        
 
     # Add the new image
     new_shape = slide.shapes.add_picture(
