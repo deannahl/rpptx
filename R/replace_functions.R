@@ -20,7 +20,6 @@ replace_image <- function(pres, label, new_image, new_height=TRUE) {
 #' @param col_names (boolean) Keep new_table column names as the first row of the
 #'  new table?
 #'
-#' @return
 #' @export
 replace_table <- function(pres, label, new_table, col_names = TRUE) {
   # If col_names is TRUE, insert a new row containing the column names
@@ -46,7 +45,6 @@ replace_table <- function(pres, label, new_table, col_names = TRUE) {
 #' @param label (character) Label of the text box containing the text to replace.
 #' @param new_text (character) New text to replace the old text.
 #'
-#' @return
 #' @export
 replace_text <- function(pres, label, new_text) {
   rpptx_py$py_replace_text(pres, label, new_text)
@@ -58,7 +56,6 @@ replace_text <- function(pres, label, new_text) {
 #' @param label (character) Label of the text box containing the text to replace.
 #' @param data (data frame) Data frame used to replace the old table.
 #'
-#' @return
 #' @export
 replace_category_plot <- function(pres, label, data) {
   categories <- as.character(unlist(data[,1]))
@@ -73,7 +70,6 @@ replace_category_plot <- function(pres, label, data) {
 #' @param label (character) Label of the text box containing the text to replace.
 #' @param percent_favorable (double) Proportion of favorable responses.
 #'
-#' @return
 #' @export
 replace_donut_plot <- function(pres, label, percent_favorable) {
   rpptx_py$py_replace_category_plot(pres, label,
@@ -87,7 +83,6 @@ replace_donut_plot <- function(pres, label, percent_favorable) {
 #' @param pres  Python pptx Presentation object.
 #' @param slide_num (int) The slide number of the target slide.
 #'
-#' @return
 #' @export
 get_slide_id <- function(pres, slide_num) {
   rpptx_py$get_slide_id(pres, as.integer(slide_num))
