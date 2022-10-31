@@ -20,7 +20,7 @@ library(rpptx)
 library(ggplot2)
 ```
 
-The `pptxr` package wraps some functions from the Python `pptx` package that allow a user to replace particular images or text within a PowerPoint presentation file. Shapes (i.e., images or text boxes) are referred to by label. Labels need to be created within the PowerPoint template file. You can edit a shape's label by clicking on the shape and then clicking "Select > Selection Pane..." in the "Editing" section of the "Home" menu. When you open the Selection Pane, the label of the shape you have selected will be highlighted. Click on the label to edit it and give it a descriptive label.
+The `rpptx` package wraps some functions from the Python `pptx` package that allow a user to replace particular images or text within a PowerPoint presentation file. Shapes (i.e., images or text boxes) are referred to by label. Labels need to be created within the PowerPoint template file. You can edit a shape's label by clicking on the shape and then clicking "Select > Selection Pane..." in the "Editing" section of the "Home" menu. When you open the Selection Pane, the label of the shape you have selected will be highlighted. Click on the label to edit it and give it a descriptive label.
 
 To demonstrate, I've create a minimal example PowerPoint file with an image and a few text boxes that you can download [here](https://genmills-my.sharepoint.com/:p:/p/justin_kracht/EQwjyvWy28hAppf_vjOb_aIBrSCa1lifajVTbCWitkEvsQ?e=EDhtpn). We can read in the example file using the `presentation()` function (you'll need to edit the path to match where you've save the PowerPoint file).
 
