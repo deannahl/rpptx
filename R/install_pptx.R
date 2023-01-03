@@ -8,5 +8,5 @@
 #'
 #' @export
 install_pptx <- function(method = "auto", conda = "auto") {
-  reticulate::py_install("pptx", method = method, conda = conda)
+  reticulate::py_install("python-pptx", method = method, conda = conda)
 }
