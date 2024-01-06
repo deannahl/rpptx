@@ -152,10 +152,10 @@ def py_replace_table(pres, label, new_table, new_table_shape):
         len(old_table.table.columns) != new_table_shape[1]
     ):
         err = ["The number of rows and columns in the new table does not match the old table. new: ", new_table_shape[0], " - ", new_table_shape[0], "old: ", len(old_table.table.rows), " - ", len(old_table.table.columns)];
-        errconcat " ".join(err);
-        print(y)
+        errconcat = " ".join(err);
+        print(errconcat)
         raise ValueError(
-          y    
+          errconcat    
         )
 
     for table_idx, cell in enumerate(old_table.table.iter_cells()):
