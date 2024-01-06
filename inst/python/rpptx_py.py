@@ -167,31 +167,11 @@ def py_replace_table(pres, label, new_table, new_table_shape):
       try:
         # Replace old text with new text, keeping formatting
         cell.text_frame.text = new_table[table_idx + 1]
+        print("success " + str(table_idx));
       except:
         print("=======");
         print(str(table_idx));
-        
-        print("-----------");
-        print(str(cell));
-        print("%%%%%%%%");
-        print(str(cell.text_frame));
-        print("^^^^^^^^");
-        print(str(cell.text_frame.paragraphs));
-        print("&&&&&&&&&");
-        print(str(cell.text_frame.paragraphs[0]));
-        print("*********");
-        print(str(paragraph));
-        print("@@@@@@@@@@");
-        print(str(enumerate(paragraph.runs)));
-        print("~~~~~~~~~~");
-        # print(str(paragraph.runs[0]));
-      
-        print("-----------");
-        # print(str(paragraph.runs[0].text));
-        
-        print("#########");
-        print(str(new_table[table_idx+1]));
-        print("+++++++++");
+
 
 def py_replace_text(pres, label, new_text):
     """Replace text in a text box but retain formatting
