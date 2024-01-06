@@ -164,9 +164,7 @@ def py_replace_table(pres, label, new_table, new_table_shape):
         )
 
     for table_idx, cell in old_table_iter:
-        print(str(table_idx));
-        print(str(cell));
-        print(str(new_table[table_idx]));
+      try:
         # Replace old text with new text, keeping formatting
         paragraph = cell.text_frame.paragraphs[0]
 
@@ -176,7 +174,10 @@ def py_replace_table(pres, label, new_table, new_table_shape):
             p.remove(run._r)
 
         paragraph.runs[0].text = new_table[table_idx]
-
+      except:
+        print(str(table_idx));
+        print(str(paragraph));
+        print(str(new_table[table_idx]));
 
 def py_replace_text(pres, label, new_text):
     """Replace text in a text box but retain formatting
