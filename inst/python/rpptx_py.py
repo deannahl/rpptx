@@ -177,7 +177,11 @@ def py_replace_table(pres, label, new_table, new_table_shape):
       except:
         print("=======");
         print(str(table_idx));
+        
+        print("-----------");
         print(str(paragraph.runs[0].text));
+        
+        print("#########");
         print(str(new_table[table_idx]));
         print("+++++++++");
 
