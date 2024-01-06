@@ -1,9 +1,9 @@
 Package: rpptx
 Type: Package
 Title: Edit PowerPoint Documents In R
-Version: 0.1.1.0
-Author: Justin Kracht
-Maintainer: Justin Kracht <justin.kracht@genmills.com>
+Version: 0.1.2.0
+Author: Deanna Haney-Loehlein, Justin Kracht
+Maintainer: Deanna Haney-Loehlein
 Description: Edit a PowerPoint template document by replacing images and text with new images and
     text, preserving size (images) or formatting (text). This is useful for creating many versions
     of a template presentation. E.g., for creating personalized decks of engagement survey
