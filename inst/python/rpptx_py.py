@@ -151,7 +151,11 @@ def py_replace_table(pres, label, new_table, new_table_shape):
     if (len(old_table.table.rows) != new_table_shape[0]) | (
         len(old_table.table.columns) != new_table_shape[1]
     ):
-        err = ["The number of rows and columns in the new table does not match the old table. new: ", str(new_table_shape[0]), " - ", str(new_table_shape[0]), "old: ", str(len(old_table.table.rows)), " - ", str(len(old_table.table.columns))];
+        err = ["The number of rows and columns in the new table does not match the old table. new: ", 
+               str(new_table_shape[0]), " by ", str(new_table_shape[1]),
+               new_table,
+               "old: ", str(len(old_table.table.rows)), " by ", str(len(old_table.table.columns)),
+              old_table.table];
         errconcat = " ".join(err);
         print(errconcat)
         raise ValueError(
