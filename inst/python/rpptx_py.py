@@ -173,10 +173,10 @@ def py_replace_table(pres, label, new_table, new_table_shape):
                 continue
             p.remove(run._r)
 
-        paragraph.runs[0].text = new_table[table_idx]
+        paragraph.runs[0].text = new_table[table_idx + 1]
       except:
         print(str(table_idx));
-        print(str(paragraph));
+        print(str(paragraph.runs[0].text));
         print(str(new_table[table_idx]));
 
 def py_replace_text(pres, label, new_text):
