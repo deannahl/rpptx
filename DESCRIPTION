@@ -3,7 +3,7 @@ Type: Package
 Title: Edit PowerPoint Documents In R
 Version: 0.1.2.0
 Author: Deanna Haney-Loehlein, Justin Kracht
-Maintainer: Deanna Haney-Loehlein
+Maintainer: Deanna Haney-Loehlein <Deanna.Haney-Loehlein@genmills>
 Description: Edit a PowerPoint template document by replacing images and text with new images and
     text, preserving size (images) or formatting (text). This is useful for creating many versions
     of a template presentation. E.g., for creating personalized decks of engagement survey
