@@ -166,15 +166,7 @@ def py_replace_table(pres, label, new_table, new_table_shape):
     for table_idx, cell in old_table_iter:
       try:
         # Replace old text with new text, keeping formatting
-        paragraph = cell.text_frame.paragraphs[0]
-        p = paragraph._p  # the lxml element containing the `<a:p>` element
-
-        for run_idx, run in enumerate(paragraph.runs):
-            if run_idx == 0:
-                continue
-            p.remove(run._r)
-
-        paragraph.runs[0].text = new_table[table_idx + 1]
+        cell.text_frame.text = new_table[table_idx + 1]
       except:
         print("=======");
         print(str(table_idx));
@@ -192,13 +184,13 @@ def py_replace_table(pres, label, new_table, new_table_shape):
         print("@@@@@@@@@@");
         print(str(enumerate(paragraph.runs)));
         print("~~~~~~~~~~");
-        print(str(paragraph.runs[0]));
+        # print(str(paragraph.runs[0]));
       
         print("-----------");
-        print(str(paragraph.runs[0].text));
+        # print(str(paragraph.runs[0].text));
         
         print("#########");
-        print(str(new_table[table_idx]));
+        print(str(new_table[table_idx+1]));
         print("+++++++++");
 
 def py_replace_text(pres, label, new_text):
