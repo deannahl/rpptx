@@ -167,6 +167,7 @@ def py_replace_table(pres, label, new_table, new_table_shape):
       try:
         # Replace old text with new text, keeping formatting
         paragraph = cell.text_frame.paragraphs[0]
+        p = paragraph._p  # the lxml element containing the `<a:p>` element
 
         for run_idx, run in enumerate(paragraph.runs):
             if run_idx == 0:
@@ -189,7 +190,7 @@ def py_replace_table(pres, label, new_table, new_table_shape):
         print("*********");
         print(str(paragraph));
         print("@@@@@@@@@@");
-        print(str(paragraph.runs));
+        print(str(enumerate(paragraph.runs)));
         print("~~~~~~~~~~");
         print(str(paragraph.runs[0]));
       
