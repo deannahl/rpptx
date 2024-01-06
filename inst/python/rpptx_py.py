@@ -175,9 +175,11 @@ def py_replace_table(pres, label, new_table, new_table_shape):
 
         paragraph.runs[0].text = new_table[table_idx + 1]
       except:
+        print("=======");
         print(str(table_idx));
         print(str(paragraph.runs[0].text));
         print(str(new_table[table_idx]));
+        print("+++++++++");
 
 def py_replace_text(pres, label, new_text):
     """Replace text in a text box but retain formatting
