@@ -32,10 +32,10 @@ replace_table <- function(pres, label, new_table, col_names = TRUE) {
 
   # Get the shape of the new table to check it against the old table
   new_table_dim <- c(nrow(new_table), ncol(new_table))
-
+  print(new_table)
   # Convert new_table to a list (by row)
   new_table <- as.list(t(new_table))
-
+  print(new_table)
   rpptx_py$py_replace_table(pres, label, new_table, new_table_dim)
 }
 
