@@ -146,6 +146,7 @@ def py_replace_table(pres, label, new_table, new_table_shape):
       top-to-bottom order
     """
     old_table = get_shape_with_label(pres, label)
+    old_table_iter = enumerate(old_table.table.iter_cells());
 
     # Check the shape of the old table against the shape of the new table
     if (len(old_table.table.rows) != new_table_shape[0]) | (
@@ -162,7 +163,10 @@ def py_replace_table(pres, label, new_table, new_table_shape):
           errconcat    
         )
 
-    for table_idx, cell in enumerate(old_table.table.iter_cells()):
+    for table_idx, cell in old_table_iter:
+        print(str(table_idx));
+        print(str(cell));
+        print(str(new_table[table_idx]));
         # Replace old text with new text, keeping formatting
         paragraph = cell.text_frame.paragraphs[0]
 
