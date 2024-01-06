@@ -179,6 +179,21 @@ def py_replace_table(pres, label, new_table, new_table_shape):
         print(str(table_idx));
         
         print("-----------");
+        print(str(cell));
+        print("%%%%%%%%");
+        print(str(cell.text_frame));
+        print("^^^^^^^^");
+        print(str(cell.text_frame.paragraphs));
+        print("&&&&&&&&&");
+        print(str(cell.text_frame.paragraphs[0]));
+        print("*********");
+        print(str(paragraph));
+        print("@@@@@@@@@@");
+        print(str(paragraph.runs));
+        print("~~~~~~~~~~");
+        print(str(paragraph.runs[0]));
+      
+        print("-----------");
         print(str(paragraph.runs[0].text));
         
         print("#########");
