@@ -166,7 +166,7 @@ def py_replace_table(pres, label, new_table, new_table_shape):
     for table_idx, cell in old_table_iter:
       try:
         # Replace old text with new text, keeping formatting
-        cell.text_frame.text = new_table[table_idx + 1]
+        cell.text_frame.text = new_table[table_idx]
         print("success " + str(table_idx));
       except:
         print("=======");
